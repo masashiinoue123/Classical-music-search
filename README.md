@@ -7,7 +7,7 @@ iTunes Search APIを利用して、クラシック音楽を検索できるWebア
 検索結果では、ジャケット画像、曲名、アーティスト名、アルバム名、再生時間を表示し、試聴ボタンから30秒プレビュー再生ができるようにしました。さらに、iTunesの作品ページへ移動できるリンクも設置しています。
 
 ## ③アプリのデプロイURL
-
+https://masashiinoue123.github.io/Classical-music-search/
 
 ## ④アプリのログイン用IDまたはPassword（ある場合）
 なし
