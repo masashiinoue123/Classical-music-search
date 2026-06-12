@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>クラシック音楽検索</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">iTunes Search API / Web App</p>
+        <h1>クラシック音楽検索</h1>
+        <p class="hero-text">
+          作曲者・演奏者・曲名で検索し、クラシック楽曲だけを見やすく一覧表示します。
+        </p>
+      </div>
+      <div class="hero-badge">Windows + VS Code 対応</div>
+    </header>
+
+    <section class="search-panel">
+      <div class="search-row">
+        <label class="field grow">
+          <span>検索キーワード</span>
+          <input id="keywordInput" type="text" placeholder="例: Beethoven, Mozart, Chopin" value="Beethoven" />
+        </label>
+
+        <label class="field">
+          <span>検索対象</span>
+          <select id="targetSelect">
+            <option value="all">すべて</option>
+            <option value="composer">作曲者</option>
+            <option value="artist">演奏者</option>
+            <option value="song">曲名</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>国</span>
+          <select id="countrySelect">
+            <option value="JP">日本</option>
+            <option value="US">アメリカ</option>
+            <option value="DE">ドイツ</option>
+            <option value="GB">イギリス</option>
+            <option value="FR">フランス</option>
+            <option value="IT">イタリア</option>
+          </select>
+        </label>
+
+        <label class="field small">
+          <span>件数</span>
+          <select id="limitSelect">
+            <option>10</option>
+            <option selected>20</option>
+            <option>30</option>
+            <option>50</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="action-row">
+        <div class="chips">
+          <button class="chip" data-keyword="Beethoven">Beethoven</button>
+          <button class="chip" data-keyword="Mozart">Mozart</button>
+          <button class="chip" data-keyword="Chopin">Chopin</button>
+          <button class="chip" data-keyword="Bach">Bach</button>
+          <button class="chip" data-keyword="Tchaikovsky">Tchaikovsky</button>
+        </div>
+        <button id="searchButton" class="primary-btn">検索</button>
+      </div>
+    </section>
+
+    <section class="status-row">
+      <div id="statusMessage" class="status-card">検索待ちです。</div>
+      <audio id="previewPlayer" controls class="audio-player"></audio>
+    </section>
+
+    <section id="resultsMeta" class="results-meta hidden"></section>
+    <section id="resultsContainer" class="results-grid"></section>
+
+    <footer class="footer-note">
+      検索結果は iTunes Search API を利用しています。試聴やストア画面は Apple 側の提供内容に依存します。
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
